@@ -1,0 +1,8 @@
+/home/esqueleto/myDevelop/BitcoinAddressGenerator/BitcoinUtilities/obj/Debug/netstandard2.0/BitcoinUtilities.csprojAssemblyReference.cache
+/home/esqueleto/myDevelop/BitcoinAddressGenerator/BitcoinUtilities/obj/Debug/netstandard2.0/BitcoinUtilities.AssemblyInfoInputs.cache
+/home/esqueleto/myDevelop/BitcoinAddressGenerator/BitcoinUtilities/obj/Debug/netstandard2.0/BitcoinUtilities.AssemblyInfo.cs
+/home/esqueleto/myDevelop/BitcoinAddressGenerator/BitcoinUtilities/bin/Debug/netstandard2.0/BitcoinUtilities.deps.json
+/home/esqueleto/myDevelop/BitcoinAddressGenerator/BitcoinUtilities/bin/Debug/netstandard2.0/BitcoinUtilities.dll
+/home/esqueleto/myDevelop/BitcoinAddressGenerator/BitcoinUtilities/bin/Debug/netstandard2.0/BitcoinUtilities.pdb
+/home/esqueleto/myDevelop/BitcoinAddressGenerator/BitcoinUtilities/obj/Debug/netstandard2.0/BitcoinUtilities.dll
+/home/esqueleto/myDevelop/BitcoinAddressGenerator/BitcoinUtilities/obj/Debug/netstandard2.0/BitcoinUtilities.pdb
