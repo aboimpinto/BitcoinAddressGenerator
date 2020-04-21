@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     ".NETStandard,Version=v2.0": {
-      "BouncyCastle.NetCore/1.8.5": {
+      "BouncyCastle.NetCore/1.8.6": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/BouncyCastle.Crypto.dll": {}
@@ -38,14 +38,14 @@
     }
   },
   "libraries": {
-    "BouncyCastle.NetCore/1.8.5": {
-      "sha512": "6uxsQw2UXrt82VQAWC2td3oBSJjUZ3P4u4DliagB8wf67KsU53V8sW9xwdF+IwZOOZFR0TCZuv/YKZ2BlrfAag==",
+    "BouncyCastle.NetCore/1.8.6": {
+      "sha512": "l22IFT8GFYKxq+4yCl89yWVDCCRVHjXcDIHO3ufVPefaZxHrFgvecmbrlTZir9tXjPCxXXivhDJgcJFlmPLhqw==",
       "type": "package",
-      "path": "bouncycastle.netcore/1.8.5",
+      "path": "bouncycastle.netcore/1.8.6",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "bouncycastle.netcore.1.8.5.nupkg.sha512",
+        "bouncycastle.netcore.1.8.6.nupkg.sha512",
         "bouncycastle.netcore.nuspec",
         "lib/Mono/BouncyCastle.Crypto.dll",
         "lib/Mono/BouncyCastle.Crypto.xml",
