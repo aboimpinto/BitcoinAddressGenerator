@@ -1,9 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
-    <ProjectReference Include="..\BitcoinUtilities\BitcoinUtilities.csproj"/>
+    <ProjectReference Include="..\BitcoinUtilities\BitcoinUtilities.csproj" />
+    <ProjectReference Include="..\AddressGenerator\AddressGenerator.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="*"/>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="*" />
   </ItemGroup>
   <PropertyGroup>
     <OutputType>Exe</OutputType>

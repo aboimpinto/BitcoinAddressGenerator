@@ -1,6 +1,5 @@
-﻿using System;
-using BitcoinUtilities;
-using Generator.Key;
+﻿
+using AddressGenerator;
 
 namespace Generator
 {
@@ -8,22 +7,25 @@ namespace Generator
     {
         static void Main(string[] args)
         {
-            var random = PrivateKey.CreatePrivateKey(Globals.ProdDumpKeyVersion);
-            var seedBytes = random.PrivateKeyBytes;
+            var newPrivateKeyBytes = new Bitcoin().GenerateBitcoinKeyByte();
 
-            //create a private key using seedBytes and not supplying compressedPublicKey which by default forces the public key to be compressed
-            var pkCompressed = new PrivateKey(Globals.ProdDumpKeyVersion, seedBytes);
-            //get the wif encoded string that represents the pkCompressed private key
-            var wifCompressed = pkCompressed.WIFEncodedPrivateKeyString;
-            //here we can create a bitcoin address string using the public key ascociated with our private key
-            var bitcoinAddressCompressed = BitcoinAddress.GetBitcoinAdressEncodedStringFromPublicKey(pkCompressed.PublicKey);
 
-            //create a private key using seedBytes which forces the public key to be compressed and supplying compressedPublicKey as false so the public key will not be compressed
-            var pkNotCompressed = new PrivateKey(Globals.ProdDumpKeyVersion, seedBytes, false);
-            var wif = pkNotCompressed.WIFEncodedPrivateKeyString;
-            var bitcoinAddress = BitcoinAddress.GetBitcoinAdressEncodedStringFromPublicKey(pkNotCompressed.PublicKey);
+            // var random = PrivateKey.CreatePrivateKey(Globals.ProdDumpKeyVersion);
+            // var seedBytes = random.PrivateKeyBytes;
 
-            Console.WriteLine($"{bitcoinAddress} | {wif}");
+            // //create a private key using seedBytes and not supplying compressedPublicKey which by default forces the public key to be compressed
+            // var pkCompressed = new PrivateKey(Globals.ProdDumpKeyVersion, seedBytes);
+            // //get the wif encoded string that represents the pkCompressed private key
+            // var wifCompressed = pkCompressed.WIFEncodedPrivateKeyString;
+            // //here we can create a bitcoin address string using the public key ascociated with our private key
+            // var bitcoinAddressCompressed = BitcoinAddress.GetBitcoinAdressEncodedStringFromPublicKey(pkCompressed.PublicKey);
+
+            // //create a private key using seedBytes which forces the public key to be compressed and supplying compressedPublicKey as false so the public key will not be compressed
+            // var pkNotCompressed = new PrivateKey(Globals.ProdDumpKeyVersion, seedBytes, false);
+            // var wif = pkNotCompressed.WIFEncodedPrivateKeyString;
+            // var bitcoinAddress = BitcoinAddress.GetBitcoinAdressEncodedStringFromPublicKey(pkNotCompressed.PublicKey);
+
+            // Console.WriteLine($"{bitcoinAddress} | {wif}");
         }
     }
 }
