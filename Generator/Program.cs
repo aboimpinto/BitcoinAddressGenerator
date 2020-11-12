@@ -1,10 +1,7 @@
 ﻿
 using System;
-using System.Linq;
 using System.Threading.Tasks;
 using AddressGenerator;
-using BitcoinUtilities;
-using Generator.Key;
 using StackExchange.Redis;
 
 namespace Generator

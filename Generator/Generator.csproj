@@ -4,7 +4,6 @@
     <ProjectReference Include="..\AddressGenerator\AddressGenerator.csproj"/>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="*"/>
     <PackageReference Include="StackExchange.Redis" Version="*"/>
   </ItemGroup>
   <PropertyGroup>
