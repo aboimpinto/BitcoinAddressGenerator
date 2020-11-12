@@ -1,14 +1,42 @@
 ﻿
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 using AddressGenerator;
+using BitcoinUtilities;
+using Generator.Key;
+using StackExchange.Redis;
 
 namespace Generator
 {
     partial class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
-            var newPrivateKeyBytes = new Bitcoin().GenerateBitcoinKeyByte();
+            var connectionMultiplexer = await ConnectionMultiplexer.ConnectAsync("127.0.0.1");
+            var redisDb = connectionMultiplexer.GetDatabase(1);
 
+            if (redisDb == null)
+            {
+                throw new ApplicationException("Could not establish connection with the Redis database");
+            }
+
+            while (true)
+            {
+                var newPrivateKeyBytes = new Bitcoin().GenerateBitcoinKeyByte();
+
+                var value = Convert.ToBase64String(newPrivateKeyBytes);
+                var key = $"Phase0:Worker1:{value}";
+                
+                var streamValue = new NameValueEntry[1];
+                streamValue[0] = new NameValueEntry(key, value);
+            
+                await redisDb
+                    .StreamAddAsync("Phase0", streamValue)
+                    .ConfigureAwait(false);
+
+                // var verifiedKey = Convert.FromBase64String(key);
+            }
 
             // var random = PrivateKey.CreatePrivateKey(Globals.ProdDumpKeyVersion);
             // var seedBytes = random.PrivateKeyBytes;
@@ -25,7 +53,34 @@ namespace Generator
             // var wif = pkNotCompressed.WIFEncodedPrivateKeyString;
             // var bitcoinAddress = BitcoinAddress.GetBitcoinAdressEncodedStringFromPublicKey(pkNotCompressed.PublicKey);
 
+            // Console.WriteLine($"{bitcoinAddressCompressed} | {random.ToString()}");
             // Console.WriteLine($"{bitcoinAddress} | {wif}");
+        }
+
+        public static byte[] StringToByteArrayFastest(string hex) 
+        {
+            if (hex.Length % 2 == 1)
+                throw new Exception("The binary key cannot have an odd number of digits");
+
+            byte[] arr = new byte[hex.Length >> 1];
+
+            for (int i = 0; i < hex.Length >> 1; ++i)
+            {
+                arr[i] = (byte)((GetHexVal(hex[i << 1]) << 4) + (GetHexVal(hex[(i << 1) + 1])));
+            }
+
+            return arr;
+        }
+
+        public static int GetHexVal(char hex) 
+        {
+            int val = (int)hex;
+            //For uppercase A-F letters:
+            //return val - (val < 58 ? 48 : 55);
+            //For lowercase a-f letters:
+            //return val - (val < 58 ? 48 : 87);
+            //Or the two combined, but a bit slower:
+            return val - (val < 58 ? 48 : (val < 97 ? 55 : 87));
         }
     }
 }
