@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddressGenerator", "Address
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phase0Worker", "Phase0Worker\Phase0Worker.csproj", "{5B953881-80DD-4F6A-9986-634E2C41637E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisCache", "RedisCache\RedisCache.csproj", "{A4B96586-0A44-4912-B5F7-806F10C313D3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -72,5 +74,17 @@ Global
 		{5B953881-80DD-4F6A-9986-634E2C41637E}.Release|x64.Build.0 = Release|Any CPU
 		{5B953881-80DD-4F6A-9986-634E2C41637E}.Release|x86.ActiveCfg = Release|Any CPU
 		{5B953881-80DD-4F6A-9986-634E2C41637E}.Release|x86.Build.0 = Release|Any CPU
+		{A4B96586-0A44-4912-B5F7-806F10C313D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4B96586-0A44-4912-B5F7-806F10C313D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4B96586-0A44-4912-B5F7-806F10C313D3}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A4B96586-0A44-4912-B5F7-806F10C313D3}.Debug|x64.Build.0 = Debug|Any CPU
+		{A4B96586-0A44-4912-B5F7-806F10C313D3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A4B96586-0A44-4912-B5F7-806F10C313D3}.Debug|x86.Build.0 = Debug|Any CPU
+		{A4B96586-0A44-4912-B5F7-806F10C313D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4B96586-0A44-4912-B5F7-806F10C313D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4B96586-0A44-4912-B5F7-806F10C313D3}.Release|x64.ActiveCfg = Release|Any CPU
+		{A4B96586-0A44-4912-B5F7-806F10C313D3}.Release|x64.Build.0 = Release|Any CPU
+		{A4B96586-0A44-4912-B5F7-806F10C313D3}.Release|x86.ActiveCfg = Release|Any CPU
+		{A4B96586-0A44-4912-B5F7-806F10C313D3}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
