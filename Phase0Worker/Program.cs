@@ -3,6 +3,7 @@ using System.IO;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using RedisCache;
 using Serilog;
 using Serilog.Events;
 
@@ -33,6 +34,8 @@ namespace Phase0Worker
                 .ConfigureServices((hostedContext, service) => 
                 {
                     service.AddHostedService<WorkerHostedService>();
+
+                    service.AddSingleton<ICache, RedisCache.Cache>();
                 })
                 .UseSerilog();
     }
